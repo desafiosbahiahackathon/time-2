@@ -1,0 +1,132 @@
+.container {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+}
+
+.container a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+}
+
+.container a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+} 
+
+#planilha{
+  width: 100%;
+  height: 400px;
+}
+
+/*flipcards*/
+
+.flipcard {
+  position: relative;
+  perspective: 1200px;
+}
+
+%flipcard-common {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: transform .5s ease, visibility .5s ease;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+}
+
+.flipcard--front {
+  @extend %flipcard-common;
+  transform: rotateY(0deg);
+}
+
+.flipcard--back {
+  @extend %flipcard-common;
+  visibility: hidden;
+  position: absolute;
+  transform: rotateY(180deg);
+}
+
+.flipcard.is-flipped {
+  .flipcard--front {
+    visibility: hidden;
+    position: absolute;
+    transform: rotateY(-180deg);
+  }
+  .flipcard--back {
+    visibility: visible;
+    position: static;
+    transform: rotateY(0deg);
+  }
+}
+
+
+/*/ Some extra stuff*/
+body {
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.container2 {
+  margin: 20px auto;
+  max-width: 300px;
+}
+
+.card {
+  background: #f9f9f9;
+  box-shadow: 0 1px 4px rgba(#000,.15);
+  padding: 20px;
+}
+
